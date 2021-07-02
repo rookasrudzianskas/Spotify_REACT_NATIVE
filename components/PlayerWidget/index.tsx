@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from "react-native";
 import styles from "./styles";
 import {Song} from "../../types";
@@ -6,6 +6,8 @@ import {AntDesign} from "@expo/vector-icons";
 import { FontAwesome } from '@expo/vector-icons';
 import {Audio} from "expo-av";
 import {Sound} from "expo-av/build/Audio/Sound";
+import {AppContext} from "../../AppContext";
+
 
 //
 // export type PlayerWidgetProps = {
@@ -27,6 +29,7 @@ const PlayerWidget = () => {
     const [duration, setDuration] = useState<number|null>(null);
     const [position, setPosition] = useState<number|null>(null);
     const [liked, setLiked] = useState<boolean>(false);
+    const {songId} = useContext(AppContext);
     // const {song} = props;
     // @ts-ignore
     const onPlaybackStatusUpdate = (status) => {

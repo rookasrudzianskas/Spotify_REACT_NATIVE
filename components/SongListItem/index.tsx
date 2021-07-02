@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, Text, Image, TouchableWithoutFeedback} from "react-native";
 import styles from "./styles";
 import {Song} from "../../types";
+import {AppContext} from "../../AppContext";
 
 export type SongListItemProps = {
     song: Song
@@ -10,8 +11,10 @@ export type SongListItemProps = {
 const SongListItem = (props: SongListItemProps) => {
     const {song} = props;
 
+    const {setSongId} = useContext(AppContext);
+
     const onPlay = () => {
-        console.log("SOMETHING WORKS 🚀")
+        setSongId(song.id);
     }
 
     return (
