@@ -1,20 +1,27 @@
-type Blog @model {
-  id: ID!
-  name: String!
-  posts: [Post] @connection(keyName: "byBlog", fields: ["id"])
-}
-
-type Post @model @key(name: "byBlog", fields: ["blogID"]) {
+type AlbumCategory @model {
   id: ID!
   title: String!
-  blogID: ID!
-  blog: Blog @connection(fields: ["blogID"])
-  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+  albums: [Album] @connection(keyName: "byAlbumCategory", fields: ["id"])
 }
 
-type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
+type Album @model @key(name: "byAlbumCategory", fields: ["albumCategoryId"]) {
   id: ID!
-  postID: ID!
-  post: Post @connection(fields: ["postID"])
-  content: String!
+  name: String!
+  by: String!
+  numberOfLikes: Int!
+  imageUri: String!
+  artistsHeadline: String!
+  songs: [Song] @connection(keyName: "byAlbum", fields: ["id"])
+  albumCategoryId: ID!
+  albumCategory: AlbumCategory @connection(fields: ["albumCategoryId"])
+}
+
+type Song @model @key(name: "byAlbum", fields: ["albumId"]) {
+  id: ID!
+  imageUri: String!
+  uri: String!
+  title: String!
+  artist: String!
+  albumId: ID!
+  album: Album @connection(fields: ["albumId"])
 }

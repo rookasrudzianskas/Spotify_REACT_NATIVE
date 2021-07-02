@@ -16,5 +16,13 @@
         }
       }
     }
+  },
+  "auth": {
+    "spotifyapp8926e879": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
   }
 }

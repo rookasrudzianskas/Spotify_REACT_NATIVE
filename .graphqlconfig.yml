@@ -1,0 +1,13 @@
+projects:
+  spotifyapp:
+    schemaPath: >-
+      Users/rookasrudzianskas/Documents/REACT_NATIVE/REACT_SPOTIFY/spotifyapp/graphql/schema.json
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/API.ts
+        docsFilePath: src/graphql

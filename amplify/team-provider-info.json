@@ -10,6 +10,11 @@
       "StackName": "amplify-spotifyapp-dev-91724",
       "StackId": "arn:aws:cloudformation:us-east-1:986698840618:stack/amplify-spotifyapp-dev-91724/2cf532e0-dafd-11eb-b403-12d55a58e4d7",
       "AmplifyAppId": "d1v3kza7pnlgfw"
+    },
+    "categories": {
+      "auth": {
+        "spotifyapp8926e879": {}
+      }
     }
   }
 }
