@@ -26,6 +26,7 @@ const PlayerWidget = () => {
     const [isPlaying, setIsPlaying] = useState<boolean>(true);
     const [duration, setDuration] = useState<number|null>(null);
     const [position, setPosition] = useState<number|null>(null);
+    const [liked, setLiked] = useState<boolean>(false);
     // const {song} = props;
     // @ts-ignore
     const onPlaybackStatusUpdate = (status) => {
@@ -68,6 +69,9 @@ const PlayerWidget = () => {
         return (position / duration) * 100;
     }
 
+    const onLiked = () => {
+        setLiked(!liked);
+    }
     return (
         <View style={styles.container}>
             <View style={[styles.progress, { width: `${getProgress()}%`}]} />
@@ -80,7 +84,9 @@ const PlayerWidget = () => {
                     </View>
 
                     <View style={styles.iconsContainer}>
-                        <AntDesign name="hearto" size={30} color={"white"}/>
+                        <TouchableOpacity onPress={onLiked}>
+                        <AntDesign name={liked ? "heart" : "hearto"} size={30} color={liked ? "red" : "white"}/>
+                        </TouchableOpacity>
                         <TouchableOpacity onPress={onPlayPausePress}>
                             <FontAwesome name={isPlaying ? 'pause' : 'play'} size={30} color={"white"}/>
                         </TouchableOpacity>
