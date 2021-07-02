@@ -5,7 +5,8 @@ import albumDetails from "../data/albumDetails";
 import SongListItem from "../components/SongListItem";
 import AlbumHeader from "../components/AlbumHeader";
 import AlbumComponent from "../components/Album";
-
+import {API, graphqlOperation} from "aws-amplify";
+import {getAlbum} from "../src/graphql/queries";
 
 const AlbumScreen = () => {
 
