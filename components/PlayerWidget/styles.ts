@@ -38,13 +38,13 @@ const styles = StyleSheet.create({
     },
     title: {
         color: 'white',
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: 'bold',
         margin: 10,
     },
     artist: {
         color: 'lightgray',
-        fontSize: 18,
+        fontSize: 16,
     }
 })
 

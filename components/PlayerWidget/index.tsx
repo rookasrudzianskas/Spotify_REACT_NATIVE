@@ -75,7 +75,7 @@ const PlayerWidget = () => {
                 <Image source={{ uri: song.imageUri }} style={styles.image} />
                 <View style={styles.rightContainer}>
                     <View style={styles.nameContainer}>
-                        <Text style={styles.title}>{song.title}</Text>
+                        <Text style={styles.title}>{song.title}   •</Text>
                         <Text style={styles.artist}>{song.artist}</Text>
                     </View>
 
