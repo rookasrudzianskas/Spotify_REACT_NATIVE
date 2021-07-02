@@ -22,6 +22,7 @@ const AlbumScreen = () => {
         const fetAlbumDetails = async () => {
             try {
                 const data = await API.graphql(graphqlOperation(getAlbum, {id: albumId}));
+                // @ts-ignore
                 setAlbum(data.data.getAlbum);
 
             } catch (e) {
