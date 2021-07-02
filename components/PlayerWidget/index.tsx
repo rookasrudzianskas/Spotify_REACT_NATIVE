@@ -26,12 +26,12 @@ const PlayerWidget = () => {
             <Image source={{ uri: song.imageUri }} style={styles.image} />
             <View style={styles.rightContainer}>
                 <View style={styles.nameContainer}>
-                    <Text style={styles.title}>{song.title}</Text>
+                    <Text style={styles.title}>{song.title}   •</Text>
                     <Text style={styles.artist}>{song.artist}</Text>
                 </View>
                 <View style={styles.iconsContainer}>
-                    <AntDesign size={30} color="white" name="hearto" />
-                    <FontAwesome name="play" size={30} color="white" />
+                    <AntDesign size={30} color="lightgrey" name="hearto" />
+                    <FontAwesome name="play" size={30} color="lightgrey" />
                 </View>
             </View>
         </View>
