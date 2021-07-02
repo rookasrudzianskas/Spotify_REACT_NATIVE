@@ -6,13 +6,20 @@ const styles = StyleSheet.create({
         position: "absolute",
         bottom: 64,
         backgroundColor: "#131313",
-        flexDirection: "row",
         width: "100%",
         marginBottom: 15,
         borderBottomWidth: 2,
         borderColor: "black",
         alignItems: 'center',
 
+    },
+    row: {
+        flexDirection: "row",
+    },
+    progress: {
+        height: 3,
+        width: "100%",
+        backgroundColor: "#bcbcbc",
     },
     image: {
         width: 65,
@@ -22,7 +29,7 @@ const styles = StyleSheet.create({
     rightContainer: {
         flex: 1,
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "space-around",
     },
     nameContainer: {
         flexDirection: "row",
@@ -34,6 +41,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: 100,
         justifyContent: "space-around",
+        marginLeft: 70,
     },
     title: {
         color: "white",

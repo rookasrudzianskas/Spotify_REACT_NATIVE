@@ -64,13 +64,18 @@ const PlayerWidget = () => {
         if(sound === null || duration === null || position === null) {
             return 0;
         }
+
+        return (position / duration) * 100;
     }
 
     return (
         <View style={styles.container}>
+            <View style={styles.progress} />
         {/*    image cover */}
+            <View style={styles.row}>
             <Image source={{ uri: song.imageUri }} style={styles.image} />
             <View style={styles.rightContainer}>
+            </View>
                 <View style={styles.nameContainer}>
                     <Text style={styles.title}>{song.title}   •</Text>
                     <Text style={styles.artist}>{song.artist}</Text>
