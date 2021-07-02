@@ -30,6 +30,7 @@ export default {
         imageUri: 'https://cdn6.f-cdn.com/contestentries/1485199/27006121/5ca3e39ced7f1_thumb900.jpg',
         title: 'Lorem Ipsum',
         artist: 'Something 2',
+
     },{
         id: '6',
         imageUri: 'https://images-na.ssl-images-amazon.com/images/I/61F66QURFyL.jpg',
