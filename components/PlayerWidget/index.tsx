@@ -12,9 +12,10 @@ import { FontAwesome } from '@expo/vector-icons';
 
 const song = {
     id: '1',
+    uri: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
     imageUri: 'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
     title: 'High on You',
-    artist: 'Helen',
+    artist: 'Rokas Rudzianskas',
 }
 
 const PlayerWidget = () => {
