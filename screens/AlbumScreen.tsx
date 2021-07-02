@@ -20,7 +20,7 @@ const AlbumScreen = () => {
     return (
         <View>
 
-            <FlatList ListHeaderComponent={() => <AlbumScreen album={albumDetails} />} data={albumDetails.songs} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} renderItem={({item}) => <SongListItem  song={item}/>} keyExtractor={( item ) => item.id}/>
+            <FlatList data={albumDetails.songs} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} renderItem={({item}) => <SongListItem  song={item}/>} keyExtractor={( item ) => item.id}/>
         </View>
     );
 };
