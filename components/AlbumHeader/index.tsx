@@ -9,7 +9,9 @@ export type AlbumHeaderProps = {
 const AlbumHeader = (props: AlbumHeaderProps) => {
     return (
         <View>
-            <Text style={{ color: "white" }}>Header</Text>
+            <View>
+
+            </View>
         </View>
     );
 };
