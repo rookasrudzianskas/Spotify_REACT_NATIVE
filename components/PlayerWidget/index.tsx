@@ -7,7 +7,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import {Audio} from "expo-av";
 import {Sound} from "expo-av/build/Audio/Sound";
 import {AppContext} from "../../AppContext";
-
+import {API, graphqlOperation} from "aws-amplify";
+import {getSong} from "../../src/graphql/queries";
 
 //
 // export type PlayerWidgetProps = {
@@ -28,8 +29,25 @@ const PlayerWidget = () => {
     const [isPlaying, setIsPlaying] = useState<boolean>(true);
     const [duration, setDuration] = useState<number|null>(null);
     const [position, setPosition] = useState<number|null>(null);
+    const [songPreview, setSongPreview] = useState(null);
     const [liked, setLiked] = useState<boolean>(false);
     const {songId} = useContext(AppContext);
+
+
+    useEffect(() => {
+        // fetch data about the song
+
+        const fetchSong = async () => {
+            try {
+                const data = await API.graphql(graphqlOperation(getSong, {id: songId}));
+                // @ts-ignore
+                setSongPreview(data.data.getSong);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        fetchSong();
+    }, [songId]);
     // const {song} = props;
     // @ts-ignore
     const onPlaybackStatusUpdate = (status) => {
@@ -48,6 +66,9 @@ const PlayerWidget = () => {
     }
 
     useEffect(() => {
+        if(!song) {
+            return;
+        }
         // play the song here
         playCurrentSong();
     }, []);
@@ -74,6 +95,9 @@ const PlayerWidget = () => {
 
     const onLiked = () => {
         setLiked(!liked);
+    }
+    if(!song) {
+        return null;
     }
     return (
         <View style={styles.container}>
